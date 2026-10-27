@@ -111,6 +111,7 @@ a\*b(float)
 
 ## 3. История изменения проекта
 
+- `b809d0f` Add tests
 - `f49f080` fix error
 - `16b4a10` add new file
 - `d078c8d` L-03: Docs added
