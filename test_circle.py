@@ -12,6 +12,12 @@ class CircleTestCase(unittest.TestCase):
     def test_float_area(self):
         res = area(2.5)
         self.assertEqual(res, math.pi * 6.25)
+    def test_negative_area(self):
+        with self.assertRaises(ValueError):
+            area(-5)
+    def test_string_area(self):
+        with self.assertRaises(TypeError):
+            area("c")
 
     def test_perimeter(self):
         res = perimeter(8)
@@ -22,3 +28,9 @@ class CircleTestCase(unittest.TestCase):
     def test_float_perimeter(self):
         res = perimeter(2.2)
         self.assertEqual(res, math.pi * 4.4)
+    def test_negative_perimeter(self):
+        with self.assertRaises(ValueError):
+            perimeter(-4)
+    def test_string_perimeter(self):
+        with self.assertRaises(TypeError):
+            perimeter("4")

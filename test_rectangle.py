@@ -1,7 +1,7 @@
 import unittest
 from rectangle import area, perimeter
 
-class CircleTestCase(unittest.TestCase):
+class ReactangleTestCase(unittest.TestCase):
     def test_area(self):
         res = area(8, 4)
         self.assertEqual(res, 32)
@@ -14,6 +14,12 @@ class CircleTestCase(unittest.TestCase):
     def test_square(self):
         res = area(4, 4)
         self.assertEqual(res, 16)
+    def test_negative_area(self):
+        with self.assertRaises(ValueError):
+            area(-5, 4)
+    def test_string_area(self):
+        with self.assertRaises(TypeError):
+            area("kj", 4)
 
     def test_perimeter(self):
         res = perimeter(8, 6)
@@ -24,3 +30,9 @@ class CircleTestCase(unittest.TestCase):
     def test_float_perimeter(self):
         res = perimeter(2.2, 8.7)
         self.assertEqual(res,  21.8)
+    def test_negative_perimeter(self):
+        with self.assertRaises(ValueError):
+            perimeter(-7, 2)
+    def test_string_perimeter(self):
+        with self.assertRaises(TypeError):
+            perimeter(8, "3")
